@@ -11,17 +11,19 @@ let total = 0;
 
 const calculateFuelForFuel = (fuel) => {
 
-// let fuelTotal = calculateFuel(fuel)
-// termination condition - error handling
+  let fuelTotal = calculateFuel(fuel);
 
-return 0;
-// recursion con
-
+  if (fuelTotal <= 0) {
+    return 0;
+  }
+  else {
+    return fuelTotal += calculateFuelForFuel(fuelTotal);
+  }
 
 };
 
 const calculateFuel = (fuel) => {
-return  Math.floor(( parseFloat( fuel ) / 3 )) - 2 ;
+  return  Math.floor(( parseFloat( fuel ) / 3 )) - 2 ;
 };
 
 exports.calculateFuelForFuel = calculateFuelForFuel;
