@@ -1,8 +1,27 @@
 
 const intCode = (codes) => {
-  let codesArray = 0;
-  return codes;
+  let codesArray = codes.split(',').map(Number);
+  console.log("codesArray", codesArray);
+  if (codesArray[0] === 99) {
+    return codesArray;
+  }
+  else {
 
+    for ( var i = 0; i < codesArray.length; i++ ) {
+      if (codesArray[i] === 1) {
+        var firstPosition = codesArray[i + 1];
+        var secondPosition = codesArray[i + 2];
+        var resultPosition = codesArray[i + 3];
+        codesArray[resultPosition] = codesArray[firstPosition] + 
+                                     codesArray[secondPosition];
+
+
+      }
+    }
+
+
+  }
+  return codesArray ;
 };
 
 
