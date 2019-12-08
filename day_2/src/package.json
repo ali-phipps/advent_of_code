@@ -1,5 +1,8 @@
 {
   "scripts": {
     "test": "mocha"
+  },
+  "dependencies": {
+    "n-readlines": "^1.0.0"
   }
 }
