@@ -75,7 +75,7 @@ describe('Day3', function() {
     });
 
     it('3 entries', function() {
-      assert.deepEqual(day3.findShortest([[0,10], [2,2], [5,1]]), 4);
+      assert.deepEqual(day3.findShortest([[0,0],[0,10], [5,1], [2,2]]), 4);
     });
   });
 });

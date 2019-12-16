@@ -69,16 +69,18 @@ const findMatches = (wire1,wire2) => {
 
 const findShortest = (route) => {
 
-  let lowestTotal = route[0][0] + route[0][1];
-  i = 1;
+  if ((route[0][0] + route[0][1]) === 0) {
+    route.shift();
+}
 
-  while (i < route.length){
-    let total = route[1][0] + route[1][1];
+  let lowestTotal = route[0][0] + route[0][1]
+
+  for (i = 0; i < route.length;i++) {
+    let total = route[i][0] + route[i][1];
 
     if (lowestTotal >= total) {
       lowestTotal = total;
     }
-    i++;
   }
   return lowestTotal;
 }
