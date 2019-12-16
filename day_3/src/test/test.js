@@ -63,6 +63,11 @@ describe('Day3', function() {
       assert.deepEqual(day3.findMatches([ [1,0], [2,0], [3,4] ],[ [1,1], [2,0], [3,4] ]),
        [[2,0], [3,4]]);
     });
+
+    it('multiple coords per wire, multiple matches', function() {
+      assert.deepEqual(day3.findMatches([ [1,0], [2,0], [3,4] ],[ [1,1], [5,0], [2,0] ]),
+       [[2,0]]);
+    });
   });
 
   describe('#findShortest()', function() {

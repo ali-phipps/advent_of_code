@@ -1,8 +1,8 @@
 
 const generateEndCoordinates = (start, input) => {
 
-  let direction = input.charAt(0);
-  let distance = input.charAt(1);
+  let direction = input.slice(0,1);
+  let distance = input.slice(1);
   let coordinates = [];
   switch(direction) {
     case "R":
@@ -57,28 +57,27 @@ const generateBetweenCoordinates = (start, end) => {
 
 const findMatches = (wire1,wire2) => {
   let result =  [];
-  let i = 0;
-  while (i < wire1.length) {
-  if (wire1[i][0] === wire2[i][0] && wire1[i][1] === wire2[i][1]) {
-    result.push(wire1[i]);
-  }
-  i++;
-}
+  wire1.forEach(function(coord1){
+    wire2.forEach(function(coord2){
+      if (coord1[0] === coord2[0] && coord1[1] === coord2[1]) {
+        result.push(coord1);
+      }
+      })
+    })
+
   return result;
 }
 
 const findShortest = (route) => {
 
-  if ((route[0][0] + route[0][1]) === 0) {
-    route.shift();
-}
-
-  let lowestTotal = route[0][0] + route[0][1]
+  let lowestTotal = 9999999999;
 
   for (i = 0; i < route.length;i++) {
-    let total = route[i][0] + route[i][1];
 
-    if (lowestTotal >= total) {
+    let absVal1 = Math.abs(route[i][0])
+    let absVal2 = Math.abs(route[i][1])
+    let total =  absVal1 + absVal2;
+    if (lowestTotal >= total && total > 0) {
       lowestTotal = total;
     }
   }
