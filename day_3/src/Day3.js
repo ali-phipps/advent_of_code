@@ -52,7 +52,13 @@ const generateBetweenCoordinates = (start, end) => {
 };
 
 const findMatches = (wire1,wire2) => {
-  return [];
+  let result =  [];
+
+  if (wire1[0][0] === wire2[0][0] && wire1[0][1] === wire2[0][1]) {
+    result.push(wire1[0]);
+  }
+
+  return result;
 }
 
 

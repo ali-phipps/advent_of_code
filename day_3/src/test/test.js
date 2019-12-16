@@ -53,7 +53,7 @@ describe('Day3', function() {
     });
 
     it('1 coord per wire, match', function() {
-      assert.deepEqual(day3.findMatches([[0,1]],[[2,0]]), []);
+      assert.deepEqual(day3.findMatches([[1,0]],[[1,0]]), [[1,0]]);
     });
   });
 });
