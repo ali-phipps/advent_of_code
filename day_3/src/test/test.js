@@ -1,8 +1,7 @@
 var assert = require('assert');
 var day3 = require('../Day3');
 
-// test
-// '[R8]' => [[0,8]]
+
 describe('Day3', function() {
   describe('#generateEndCoordinates()', function() {
     it('1 input right', function() {
@@ -57,7 +56,12 @@ describe('Day3', function() {
     });
 
     it('multiple coords per wire, 1 match', function() {
-      assert.deepEqual(day3.findMatches([[1,0],[2,0]],[[1,0],[1,1]]), [[1,0]]);
+      assert.deepEqual(day3.findMatches([[1,0],[2,0]],[[1,1],[2,0]]), [[2,0]]);
+    });
+
+    it('multiple coords per wire, multiple matches', function() {
+      assert.deepEqual(day3.findMatches([ [1,0], [2,0], [3,4] ],[ [1,1], [2,0], [3,4] ]),
+       [[2,0], [3,4]]);
     });
   });
 });
