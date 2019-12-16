@@ -15,8 +15,8 @@ describe('Day3', function() {
       assert.deepEqual(day3.generateCoordinates([0,0],['U8']), [[0,8]]);
     });
 
-    it('1 input down', function() {
-      assert.deepEqual(day3.generateCoordinates([0,0],['D8']), [[0,-8]]);
+    it('multiple inputs same type', function() {
+      assert.deepEqual(day3.generateCoordinates([0,0],['U8','U2','U3']), [[0,-8]]);
     });
 
 
