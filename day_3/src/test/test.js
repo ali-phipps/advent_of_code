@@ -51,5 +51,9 @@ describe('Day3', function() {
     it('1 coord per wire, no match', function() {
       assert.deepEqual(day3.findMatches([[0,1]],[[2,0]]), []);
     });
+
+    it('1 coord per wire, match', function() {
+      assert.deepEqual(day3.findMatches([[0,1]],[[2,0]]), []);
+    });
   });
 });
