@@ -22,8 +22,34 @@ describe('Day3', function() {
   });
 
   describe('#generateBetweenCoordinates()', function() {
-    it(generate x coordinates', function() {
-      assert.deepEqual(day3.generateEndCoordinates([0,0],[3,0]), [[1,0],[2,0]]);
+    it('generate 1 x coordinate', function() {
+      assert.deepEqual(day3.generateBetweenCoordinates([0,0],[2,0]), [[0,0],[1,0],[2,0]]);
+    });
+
+    it('generate multiple x coordinates', function() {
+      assert.deepEqual(day3.generateBetweenCoordinates([0,0],[3,0]), [[0,0],[1,0],[2,0],[3,0]]);
+    });
+
+    it('generate 1 y coordinate', function() {
+      assert.deepEqual(day3.generateBetweenCoordinates([0,0],[0,2]), [[0,0],[0,1],[0,2]]);
+    });
+
+    it('generate multiple y coordinates', function() {
+      assert.deepEqual(day3.generateBetweenCoordinates([0,0],[0,3]), [[0,0],[0,1],[0,2],[0,3]]);
+    });
+
+    it('generate 1 reverse x coordinates', function() {
+      assert.deepEqual(day3.generateBetweenCoordinates([2,0],[0,0]), [[2,0],[1,0],[0,0]]);
+    });
+
+    it('generate 1 reverse y coordinates', function() {
+      assert.deepEqual(day3.generateBetweenCoordinates([0,2],[0,0]), [[0,2],[0,1],[0,0]]);
+    });
+  });
+
+  describe('#findMatches()', function() {
+    it('1 coord per wire, no match', function() {
+      assert.deepEqual(day3.findMatches([[0,1]],[[2,0]]), []);
     });
   });
 });
