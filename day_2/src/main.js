@@ -11,7 +11,7 @@ let loopOutput = [];
   let i = 0;
   let j = 0;
 
-  while (i < 100) {
+  while (i < 100  ) {
     while (j < 100) {
       let loopOutput = day2.intCode(i,j);
        if (loopOutput === 19690720) {
