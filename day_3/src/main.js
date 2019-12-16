@@ -11,10 +11,8 @@ let i = 0;
 while (i < wire1.length) {
   let nextCoords = day3.generateEndCoordinates(prevCoords,wire1[i]);
   let betweenCoords = day3.generateBetweenCoordinates(prevCoords,nextCoords)
-
   betweenCoords.push(nextCoords);
   wire1Coords = wire1Coords.concat(betweenCoords);
-
   prevCoords = nextCoords;
   i++;
 }
@@ -26,16 +24,13 @@ let ii = 0;
 while (ii < wire2.length) {
   let nextCoords = day3.generateEndCoordinates(prevCoords,wire2[ii]);
   let betweenCoords = day3.generateBetweenCoordinates(prevCoords,nextCoords)
-
   betweenCoords.push(nextCoords);
   wire2Coords = wire2Coords.concat(betweenCoords);
-
   prevCoords = nextCoords;
   ii++;
 }
 
 let matches = day3.findMatches(wire1Coords,wire2Coords);
-
 let mahattanDistance = day3.findShortest(matches);
 console.log(matches)
 console.log(mahattanDistance)
