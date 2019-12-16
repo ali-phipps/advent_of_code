@@ -21,7 +21,9 @@ describe('Day3', function() {
 
   });
 
-  describe('#generateEndCoordinates()', function() {
-    
+  describe('#generateBetweenCoordinates()', function() {
+    it(generate x coordinates', function() {
+      assert.deepEqual(day3.generateEndCoordinates([0,0],[3,0]), [[1,0],[2,0]]);
+    });
   });
 });

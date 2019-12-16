@@ -23,3 +23,4 @@ const generateEndCoordinates = (start, input) => {
 };
 
 exports.generateEndCoordinates = generateEndCoordinates;
+exports.generateBetweenCoordinates = generateBetweenCoordinates;
