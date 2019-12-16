@@ -33,11 +33,9 @@ while (ii < wire2.length) {
   prevCoords = nextCoords;
   ii++;
 }
-// console.log(wire1Coords)
-// console.log(wire2Coords)
 
 let matches = day3.findMatches(wire1Coords,wire2Coords);
-// console.log(matches)
+
 let mahattanDistance = day3.findShortest(matches);
 console.log(matches)
 console.log(mahattanDistance)
